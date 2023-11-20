@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abdmessa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/20 18:23:56 by abdmessa          #+#    #+#             */
+/*   Updated: 2023/11/20 18:24:00 by abdmessa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_count_h(unsigned long int nb, unsigned long int b)
@@ -64,6 +76,8 @@ int	ft_printf(const char *s, ...)
 	va_start(arg, s);
 	i = 0;
 	count = 0;
+	if (!s)
+		return (-1);
 	while (s[i])
 	{
 		if (s[i] == '%')
@@ -78,8 +92,9 @@ int	ft_printf(const char *s, ...)
 	va_end(arg);
 	return (count);
 }
-
-/*int	main(void)
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
 {
 	int	count;
 
