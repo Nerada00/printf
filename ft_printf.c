@@ -92,29 +92,3 @@ int	ft_printf(const char *s, ...)
 	va_end(arg);
 	return (count);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	int	count;
-
-	count = ft_printf("Bruh %s\n", "Cyril");
-	printf("%d donc\n", count); //, fflush(stdout);
-	count = ft_printf("char-> %c\n", 'a');
-	printf("%d cavvvvvvvvrs\n", count); //, fflush(stdout);
-	count = ft_printf("Nbr-> %d\n", -42);
-	printf("%d chars\n", count); //, fflush(stdout);
-	count = ft_printf("Hex-> %x\n", -1);
-	printf("%d caaars\n", count); //, fflush(stdout);
-	// REAL
-	printf("\n\n");
-	puts("REAL PRINTF");
-	count = printf("Hello %s\n", "John");
-	printf("%d donc\n", count); //, fflush(stdout);
-	count = printf("Char-> %c\n", 'a');
-	printf("%d cars\n", count); //, fflush(stdout);
-	count = printf("Nbr-> %d\n", -42);
-	printf("%d cars\n", count); //, fflush(stdout);
-	count = printf("Hex-> %x\n", -1);
-	printf("%d cars\n", count); //, fflush(stdout);
-}*/
