@@ -25,7 +25,7 @@ int	ft_count_h(unsigned long int nb, unsigned long int b)
 	return (i);
 }
 
-int	h(unsigned long int n, char *base)
+int	hex(unsigned long int n, char *base)
 {
 	if (n < ft_strlen(base))
 	{
@@ -33,8 +33,8 @@ int	h(unsigned long int n, char *base)
 	}
 	if (n >= ft_strlen(base))
 	{
-		h(n / ft_strlen(base), base);
-		h(n % ft_strlen(base), base);
+		hex(n / ft_strlen(base), base);
+		hex(n % ft_strlen(base), base);
 	}
 	return (ft_count_h(n, ft_strlen(base)));
 }
@@ -50,17 +50,17 @@ int	ft_check(char c, va_list arg)
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
 	if (c == 'u')
-		return (h(va_arg(arg, unsigned int), "0123456789"));
+		return (hex(va_arg(arg, unsigned int), "0123456789"));
 	if (c == 'x')
-		return (h(va_arg(arg, unsigned int), "0123456789abcdef"));
+		return (hex(va_arg(arg, unsigned int), "0123456789abcdef"));
 	if (c == 'X')
-		return (h(va_arg(arg, unsigned int), "0123456789ABCDEF"));
+		return (hex(va_arg(arg, unsigned int), "0123456789ABCDEF"));
 	if (c == 'p')
 	{
 		p = va_arg(arg, void *);
 		if (!p)
 			return (write(1, "(nil)", 5));
-		return (ft_putstr("0x") + h((unsigned long int)p, "0123456789abcdef"));
+		return (ft_putstr("0x") + hex((unsigned long int)p, "0123456789abcdef"));
 	}
 	if (c == '%')
 		return (ft_putchar('%'));
